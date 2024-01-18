@@ -28,7 +28,7 @@
 <br>
 <img src="https://github.com/Harshit9651/Admin-User-management/assets/130920101/9475748c-61eb-4e86-adcc-c714a5a4e8d6">
 <br>
-<img src="https://github.com/Harshit9651/Admin-User-management/assets/130920101/fd2a941d-3a3c-48da-8422-91ef5748bb17">
+
 
 
 
