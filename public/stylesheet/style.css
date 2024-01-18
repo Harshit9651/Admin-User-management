@@ -1,0 +1,24 @@
+
+.navbar-brand{
+    font-family: Dancing Script;
+    font-size: 2rem;
+    color: white;
+  
+  }
+  .navbar{
+    background-color:#b9c720!important;
+    color: white !important;
+    height: 4rem;
+  }
+  .nav-link {
+    color: rgb(255, 245, 245) !important;
+  cursor: pointer;
+    font-size: 1.3rem;
+  }
+  body{
+    background-color: #081b29;
+   
+  }
+  .ellu{
+    margin-top: 5 rem !important;
+  }

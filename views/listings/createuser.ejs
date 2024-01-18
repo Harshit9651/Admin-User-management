@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+
+    <style>
+        .main {
+            height: 100vh;
+        }
+
+        .ellu {
+            margin-top: 3rem !important;
+        }
+        .cropper-container {
+            overflow: hidden !important;
+            background-color: yellow !important;
+        
+        }
+        #home
+      {
+        margin-top: 2rem !important;
+      }
+    </style>
+
+    <title>User Registration</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+      <a id="home" href="/" class="btn btn-info"><i class="fa-solid fa-arrow-left"> </i> HOME</a>
+        <div class="row main">
+            <div class="col-md-8 offset-2 ellu">
+ 
+                <form method="post" action="/register"  
+                enctype="multipart/form-data">
+                    <h2 id="dr">
+                     User Registration
+                    </h2>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <label for="exampleFormControlInput1" class="form-label">Enter Photo :</label>
+                        <input type="file" id="inputImage" accept="image/*" class="form-control" required
+                            id="exampleFormControlInput1" name="Image" placeholder="Enter Image" accept="image/*">
+</div>
+                <div class="col-md-5">
+                  <img id="image" style="max-width: 100%;" alt="Uploaded Image">
+                  <canvas id="croppedImage" style="max-width: 50%;"></canvas>
+                  <button id="cropButton" type="button" class="btn btn-primary">Crop & Save</button>
+
+                       
+
+                       
+                      </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Please choose a username.
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                      <div class="col-md-3 "> 
+                        <label for="Fname"  name="Fname" class="form-label"> First Name :</label>
+                        <input type="text" class="form-control" id="Fname" name="Fname" required></input>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                          Please choose a username.
+                        </div>
+                      </div>
+                     
+                      <div class="col-md-3"> 
+                        <label for="Lname"   class="form-label">Last Name :</label>
+                        <input type="text" class="form-control" id="Lname"required name="Lname" ></input>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                          Please choose a username.
+                        </div>
+                      </div>
+                    </div>
+                    
+                      <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Email address :</label>
+                          <input type="email" class="form-control" required id="exampleFormControlInput1" name="Email" placeholder="name@example.com">
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Please choose a username.
+                          </div>
+                        </div>
+                        <input type="hidden" id="userId" name="userId" value="">
+                        <input type="hidden" id="user" name="user" value="">
+                        <div class="mb-3">
+                          <label for="Username" class="form-label">Enter Username :</label>
+                          <input type="text" class="form-control" required id="Username" name="Username">
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Please choose a username.
+                          </div>
+                        </div>
+                      
+                    
+                        <div class="mb-3">
+                          <label for="Number" class="form-label">Enter Number:</label>
+                          <input type="tel" class="form-control" required name="Number" id="Number" >
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Please choose a username.
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="password" class="form-label">Enter password:</label>
+                          <input type="password" class="form-control" required id="password" name="password">
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Please choose a username.
+                          </div>
+                        </div>
+                     
+                        <div class="mb-3">
+                          <div class="form-check">
+                            <input class="form-check-input" required type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                              Agree to terms and conditions
+                            </label>
+                            <div class="invalid-feedback">
+                              You must agree before submitting.
+                            </div>
+                          </div>
+                    
+
+                    <div class="col-3">
+                        <div class=" mt-5 mb-5">
+                            <button class="btn btn-success" onclick="submitForm()">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+      
+    <script>// Example starter JavaScript for disabling form submissions if there are invalid fields
+      (() => {
+        'use strict'
+      
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+      
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+          form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+      
+            form.classList.add('was-validated')
+          }, false)
+        })
+      })()
+      
+    
+          
+         
+      
+      
+      
+      </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const inputImage = document.getElementById('inputImage');
+            const image = document.getElementById('image');
+            const cropButton = document.getElementById('cropButton');
+            const croppedImage = document.getElementById('croppedImage');
+            const userField = document.getElementById('user');
+            let cropper;
+    
+            inputImage.addEventListener('change', function (e) {
+                const reader = new FileReader();
+    
+                reader.onload = function (event) {
+                    image.src = event.target.result;
+                    cropper = new Cropper(image, {
+                        aspectRatio: 0.8, // You can set the aspect ratio as per your requirement
+                        viewMode: 1.5, // 1,2
+                    });
+                };
+    
+                reader.readAsDataURL(e.target.files[0]);
+            });
+    
+            cropButton.addEventListener('click', function () {
+                const canvas = cropper.getCroppedCanvas();
+                
+                // Set the maximum width for the cropped image
+                const maxWidth = 150; // Change this value to your desired maximum width in pixels
+    
+                if (canvas.width > maxWidth) {
+                    alert("Error: The cropped image width exceeds the maximum limit.");
+                    return;
+                }
+    
+                croppedImage.width = canvas.width;
+                croppedImage.height = canvas.height;
+                const context = croppedImage.getContext('2d');
+                context.drawImage(canvas, 0, 0, canvas.width, canvas.height);
+                userField.value = "user";
+                // You can upload the croppedImage to the server or do other operations here
+            });
+        });
+       
+        // Function to generate a user ID
+        function generateUserId() {
+          const userId = Math.random().toString(36).substring(7);
+    alert('Generated User ID (Please Noted,help in login): ' + userId);
+    return userId;
+        }
+
+        // Function to submit the form
+        function submitForm() {
+            const userId = generateUserId();
+            document.getElementById('userId').value = userId; // Set the generated user ID in a hidden input field
+            document.forms[0].submit(); // Submit the form
+        }
+    </script>
+
+</body>
+
+</html>

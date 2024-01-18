@@ -1,0 +1,72 @@
+
+<title>Login Page</title>
+<style>
+  body {
+    background-color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  #loginContainer {
+      height: 60vh;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  .loginButton {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: #44c719;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .loginButton:hover {
+    background-color: #2980b9;
+  }
+  .ims{
+      border-radius: 30%;
+  }
+  a{
+      text-decoration: none;
+      color: white;
+  }
+  #home{
+    margin-top: 3rem !important;
+  }
+</style>
+</head>
+<body>
+    <a id="home" style="color: #2980b9;"> home</a>
+<div id="loginContainer">
+  <h2 style="font-weight: 700; font-size: 1.5rem;">Welcome to log in page</h2>
+ 
+<div class="ims">
+  <img style="height: 40vh;" src="https://img.freepik.com/free-vector/user-verification-unauthorized-access-prevention-private-account-authentication-cyber-security-people-entering-login-password-safety-measures_335657-3530.jpg?size=626&ext=jpg" alt="">
+</div>
+  <br>
+ 
+
+  <button class="loginButton"   ><a href="/userlogin">Login as a user</a></button>
+  <button class="loginButton" ><a href="/adminlogin">Login As Admin</a></button>
+
+</div>
+
+
+<script>
+
+</script>
+</body>
